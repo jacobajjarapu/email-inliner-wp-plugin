@@ -1,0 +1,19 @@
+.inliner_wrapper {
+  position: relative;
+}
+
+#inlined_text {
+  width: 100%;
+}
+
+#copy_btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+
+  background: rgba(0,0,0,0.4);
+  border: 0;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+}
