@@ -1,7 +1,7 @@
 (function() {
   'use strict';
-  document.body.addEventListener('click', copy, true);
-
+  document.getElementById('copy_btn').addEventListener('click', copy, true);
+  
   function copy(e) {
     e.preventDefault();
     var t = e.target;
@@ -26,7 +26,7 @@
   }
 })();
 
-$(document).ready(function() {
+jQuery(document).ready(function($){
   var inlinerUrl = $('#inliner_url').val();
   var permalink = $('#permalink').val();
 
