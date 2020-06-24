@@ -37,7 +37,16 @@ jQuery(document).ready(function($){
       url: permalink,
     },
     success: function(res) {
-      $('#inlined_text').val(res.html.replace(/\\/g, ''));
+      var result = res.html;
+      
+      result = result.replace(/\\/g, '');
+      result = result.replace(/’/g, '\'');
+      result = result.replace(/\s&\s/g, ' &amp; ');
+      result = result.replace('…', '&hellip;');
+      result = result.replace('https://fonts.googleapis.com/css?family=Lato:400,700,400italic', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700;1,800;1,900&display=swap');
+
+      
+      $('#inlined_text').val(result);
     },
     error: function(err) {
       $('#inlined_text').val(JSON.stringify(err));
